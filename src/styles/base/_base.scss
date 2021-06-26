@@ -1,0 +1,94 @@
+
+.App { overflow-x: hidden;}
+//***** Base ******
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $body-font;
+  //font-size: $normal-font-size;
+  //font-weight: 500;
+}
+
+.wrapper {
+  max-width: 1305px;
+  margin: 0 auto;
+}
+
+.section__main {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+
+.title_main {
+  text-shadow: -15px -15px 0px #E3E3E3;
+  font-size: 2rem;
+  color: $body-color;
+  text-align: center;
+  //margin: 3rem 0;
+}
+
+.title_center {
+  text-align: center;
+}
+
+// .title_study {
+//   text-align: center;
+//   margin: 3rem 0;
+// }
+
+
+/* ELLIPSIS MULTILINEA */
+@mixin ellipsis-multiline($font-size, $line-height, $lines-to-show, $margin:"0") {
+  $height-calc: $font-size*$line-height*$lines-to-show;
+  display: block;
+  display: -webkit-box;
+  font-size: $font-size*1px;
+  line-height: $line-height;
+  max-height: 196.8px;// ($height-calc + $margin)*1px;
+  overflow: hidden;
+  //position: relative;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+
+  p:not(:first-of-type) {
+    display: none;
+  }
+}
+
+
+
+.b-grid, 
+.about-grid, 
+.box__personal, 
+.study_experience_grid, 
+.work_grid,
+.testimonial_grid {
+  display: grid;
+  //grid-template-columns: repeat(1, 1fr);
+  //border: 1px solid red;
+  width: auto;
+  height: 100%;
+  //align-items: center;
+  gap: 0rem;
+  
+}
+
+//Scrollbar
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+ 
+body::-webkit-scrollbar-track {
+  background:  rgba(0, 0, 0, 0.1);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(95, 35, 228, 0.4);
+  border-radius: 1rem;
+}
